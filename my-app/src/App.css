@@ -1,0 +1,241 @@
+.App {
+  text-align: center;
+  background: #f5f5f5;
+  color: #222;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* header merges with background to unify style */
+  background-color: transparent;
+  margin-bottom: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #222;
+  /* remove shadow to keep header light */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.mode-nav {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.mode-nav button {
+  background: none;
+  border: none;
+  padding: 8px 0; /* keep only vertical padding for click area */
+  font-size: 1rem;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.mode-nav button:hover,
+.mode-nav button.active {
+  color: #007bff;
+}
+
+/* mobile adjustments */
+@media (max-width: 480px) {
+  .mode-nav {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .mode-nav button {
+    /* keep same text-only appearance but stack vertically */
+    background: none;
+    color: #444;
+    padding: 8px 0;
+  }
+  .manual-mode,
+  .listening-mode,
+  .post-roast,
+  .percentage-list {
+    border-radius: 16px;
+    padding: 20px;
+    margin: 0 16px; /* add side margin on narrow screens */
+  }
+}
+
+.manual-mode,
+.listening-mode {
+  margin: 20px auto;
+  max-width: 360px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.manual-mode label,
+.listening-mode label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.manual-mode h3,
+.listening-mode h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.listening-mode .elapsed-display {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+.manual-mode input {
+  width: 100%;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fafafa;
+  color: #222;
+  font-size: 1rem;
+}
+.manual-mode button,
+.listening-mode button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.manual-mode button:hover,
+.listening-mode button:hover {
+  background: #0056cc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.listening-mode p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.percentage-list {
+  margin: 20px auto;
+  max-width: 360px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.percentage-list ul {
+  list-style: none;
+  padding: 0;
+}
+.percentage-list li {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.post-roast {
+  margin: 20px auto;
+  max-width: 360px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.post-roast label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.post-roast input {
+  width: 100%;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fafafa;
+  color: #222;
+  font-size: 1rem;
+}
+.post-roast button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.post-roast button:hover {
+  background: #0056cc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.loss-results {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .post-roast {
+    margin: 20px 16px; /* add side margin on narrow screens */
+  }
+}
